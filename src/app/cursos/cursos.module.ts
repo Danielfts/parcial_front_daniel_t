@@ -12,6 +12,10 @@ import { CursosDetailComponent } from './cursos-detail/cursos-detail.component';
   ],
   imports: [
     CommonModule
+  ],
+  exports:[
+    CursosListComponent,
+    CursosDetailComponent
   ]
 })
 export class CursosModule { }

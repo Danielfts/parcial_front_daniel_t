@@ -1,1 +1,23 @@
-<p>cursos-list works!</p>
+<div class="row">
+    <div class="col-7">
+        <table class="table-light table-striped table-hover">
+            <thead>
+                <th>#</th>
+                <th>Nombre</th>
+                <th>Plataforma</th>
+                <th>Lanzamiento</th>
+                <th>Duración (h)</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let c of cursos">
+                    <td>{{c.id}}</td>
+                    <td><a (click)="onClick()" class="btn-link" style="text-decoration: none;" role="button"><strong >{{c.title}}</strong></a></td>
+                    <td>{{c.platform}}</td>
+                    <td>{{c.launch_year}}</td>
+                    <td>{{c.duration_hours}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col"></div>
+</div>
