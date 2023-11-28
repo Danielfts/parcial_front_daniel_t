@@ -1,23 +1,28 @@
 <div class="row">
     <div class="col-7">
-        <table class="table-light table-striped table-hover">
-            <thead>
-                <th>#</th>
-                <th>Nombre</th>
-                <th>Plataforma</th>
-                <th>Lanzamiento</th>
-                <th>Duración (h)</th>
+        <table class="table table-hover table-striped table-light">
+            <thead class="table-success">
+                <tr>
+                    <th>#</th>
+                    <th>Nombre</th>
+                    <th>Plataforma</th>
+                    <th>Lanzamiento</th>
+                    <th>Duración (h)</th>
+                </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let c of cursos">
                     <td>{{c.id}}</td>
-                    <td><a (click)="onClick()" class="btn-link" style="text-decoration: none;" role="button"><strong >{{c.title}}</strong></a></td>
+                    <td><a (click)="onClick(c)" class="btn-link" style="text-decoration: none;" role="button"><strong >{{c.title}}</strong></a></td>
                     <td>{{c.platform}}</td>
                     <td>{{c.launch_year}}</td>
                     <td>{{c.duration_hours}}</td>
                 </tr>
             </tbody>
         </table>
+        <p *ngIf="ofrecenCertificado.length >0">Los cursos {{ofrecenCertificadoString}} ofrecen certificado</p>
     </div>
-    <div class="col"></div>
+    <div class="col" *ngIf="show">
+        <app-cursos-detail [curso]="selectedCurso"></app-cursos-detail>
+    </div>
 </div>

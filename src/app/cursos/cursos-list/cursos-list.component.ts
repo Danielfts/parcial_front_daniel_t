@@ -14,9 +14,15 @@ export class CursosListComponent implements OnInit {
   ) { }
 
   cursos:Curso[] = [];
+  ofrecenCertificado:string[] = [];
+  ofrecenCertificadoString:string = '';
+  show:boolean = false;
+  selectedCurso!:Curso;
 
-  onClick(){
+  onClick(curso:Curso){
     console.log('Click en el botón');
+    this.selectedCurso = curso;
+    this.show = true;
   }
 
   ngOnInit(): void {
@@ -24,6 +30,12 @@ export class CursosListComponent implements OnInit {
       (data) => {
         console.log(data);
         this.cursos = data;
+        this.cursos.forEach((curso, index) => {
+          if (curso.offers_certificate == true){
+            this.ofrecenCertificado.push(index.toString());
+          }
+        });
+        this.ofrecenCertificadoString = this.ofrecenCertificado.join(', ');
       }
     );
   }
