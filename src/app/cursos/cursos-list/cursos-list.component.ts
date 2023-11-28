@@ -32,7 +32,8 @@ export class CursosListComponent implements OnInit {
         this.cursos = data;
         this.cursos.forEach((curso, index) => {
           if (curso.offers_certificate == true){
-            this.ofrecenCertificado.push(index.toString());
+            let n:number = index + 1;
+            this.ofrecenCertificado.push(n.toString());
           }
         });
         this.ofrecenCertificadoString = this.ofrecenCertificado.join(', ');

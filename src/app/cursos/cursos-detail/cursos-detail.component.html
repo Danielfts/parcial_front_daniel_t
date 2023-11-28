@@ -6,16 +6,9 @@
     <div class="card-body">
         <h3>Descripción</h3>
         <p>{{curso.description}}</p>
-        <!-- <h3>Id</h3>
-        <p>{{curso.id}}</p>
-        <h3>Plataforma</h3>
-        <p>{{curso.platform}}</p>
-        <h3>Fecha de lanzamiento</h3>
-        <p>{{curso.launch_year}}</p> -->
+        
         <h3 style="color: green;" *ngIf="curso.offers_certificate">SI Ofrece Certificado</h3>
         <h3 style="color: red;" *ngIf="!curso.offers_certificate">NO Ofrece Certificado</h3>
-        
-        <!-- <h3>Duración (h)</h3>
-        <p>{{curso.duration_hours}}</p> -->
+      
     </div>
 </div>

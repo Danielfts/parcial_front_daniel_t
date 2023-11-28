@@ -1,18 +1,18 @@
 <div class="row">
     <div class="col-7">
-        <table class="table table-hover table-striped table-light">
+        <table class="table table-hover table-striped table-light text-center">
             <thead class="table-success">
                 <tr>
-                    <th>#</th>
-                    <th>Nombre</th>
-                    <th>Plataforma</th>
-                    <th>Lanzamiento</th>
-                    <th>Duración (h)</th>
+                    <th scope="col">#</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Plataforma</th>
+                    <th scope="col">Lanzamiento</th>
+                    <th scope="col">Duración (h)</th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let c of cursos">
-                    <td>{{c.id}}</td>
+                    <th scope="row">{{c.id}}</th>
                     <td><a (click)="onClick(c)" class="btn-link" style="text-decoration: none;" role="button"><strong >{{c.title}}</strong></a></td>
                     <td>{{c.platform}}</td>
                     <td>{{c.launch_year}}</td>
